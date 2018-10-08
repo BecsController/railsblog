@@ -1,31 +1,22 @@
 
 <%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages' %>
 
   <div class="field">
      <%= f.label :name %><br />
-     <%= f.text_field :name %>
+     <%= f.text_field :name, class: 'control' %>
    </div>
   <div class="field">
      <%= f.label :email %><br />
-     <%= f.text_field :email %>
+     <%= f.text_field :email, class: 'control' %>
    </div>
    <div class="field">
      <%= f.label :password %><br />
-     <%= f.password_field :password %>
+     <%= f.password_field :password, class: 'control' %>
    </div>
    <div class="field">
      <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
+     <%= f.password_field :password_confirmation, class: 'control' %>
    </div>
    <div class="actions"><%= f.submit "Sign Up" %></div>
  <% end %>
