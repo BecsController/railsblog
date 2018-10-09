@@ -1,5 +1,5 @@
 
-  <div class="error_messages has-text-danger">
+  <div class="error_messages has-text-danger has-text-centered is-size-5">
     <h2>The form contains <%= pluralize(@user.errors.count, "error") %>.</h2>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
