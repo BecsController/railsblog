@@ -2,7 +2,11 @@
   <h1 class="navbar-brand is-size-2">Bec's Ruby and Rails Blog</h1>
   <ul class="navbar-end">
       <li><%= link_to 'Home', "/" %></li>
-      <li><%= link_to 'Login', "/login" %></li>
-      <li><%= link_to 'Signup', "/signup" %></li>
+      <% if current_user %>
+        <li><%= link_to 'Logout', logout_path, method: "delete" %></li>
+      <% else %>
+        <li><%= link_to 'Login', "/login" %></li>
+        <li><%= link_to 'Signup', "/signup" %></li>
+      <% end %>
   </ul>
 </div>
