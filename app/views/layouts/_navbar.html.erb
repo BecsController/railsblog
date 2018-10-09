@@ -1,12 +1,16 @@
+<% buttonClass = "button is-inverted is-link" %>
+
 <div class="navbar">
-  <h1 class="navbar-brand is-size-2">Bec's Ruby and Rails Blog</h1>
+  <h1 class="navbar-brand is-size-2 has-text-link">
+    Bec's Ruby and Rails Blog
+  </h1>
   <ul class="navbar-end">
-      <li><%= link_to 'Home', "/" %></li>
+      <li class="linkClass <%= buttonClass %>"><%= link_to 'Home', "/" %></li>
       <% if current_user %>
-        <li><%= link_to 'Logout', logout_path, method: "delete" %></li>
+        <li class="linkClass <%= buttonClass %>"><%= link_to 'Logout', logout_path, method: "delete" %></li>
       <% else %>
-        <li><%= link_to 'Login', "/login" %></li>
-        <li><%= link_to 'Signup', signup_path %></li>
+        <li class="linkClass <%= buttonClass %>"><%= link_to 'Login', "/login" %></li>
+        <li class="linkClass <%= buttonClass %>"><%= link_to 'Signup', signup_path %></li>
       <% end %>
   </ul>
 </div>
