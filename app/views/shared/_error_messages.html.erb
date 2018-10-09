@@ -1,4 +1,4 @@
-<% if @user.errors.any? %>
+
   <div class="error_messages has-text-danger">
     <h2>The form contains <%= pluralize(@user.errors.count, "error") %>.</h2>
     <ul>
@@ -7,4 +7,3 @@
       <% end %>
     </ul>
   </div>
-<% end %>
