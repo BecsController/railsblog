@@ -11,6 +11,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
   end
+  # asserts that there is no difference to user count after attempting
+  # incorrect signup
 
   test 'valid signup information' do
     get signup_path
@@ -25,3 +27,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_not flash.FILL_IN
   end
 end
+
+# asserts that the user count is increased by one when there is a
+# functional signup
