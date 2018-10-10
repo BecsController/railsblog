@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   get '/signup' => 'users#new'
+  post '/signup',  to: 'users#create'
 
   resources :users
 
