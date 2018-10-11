@@ -6,7 +6,8 @@
   </h1>
   <ul class="navbar-end">
       <li class="linkClass <%= buttonClass %>"><%= link_to 'Home', "/" %></li>
-      <% if current_user %>
+      <% if logged_in? %>
+        <p>You are logged in as <%= current_user.name %></p>
         <li class="linkClass <%= buttonClass %>"><%= link_to "Profile", current_user %></li>
         <li class="linkClass <%= buttonClass %>"><%= link_to "Settings", '#' %></li>
         <li class="linkClass <%= buttonClass %>"><%= link_to 'Logout', logout_path, method: "delete" %></li>
