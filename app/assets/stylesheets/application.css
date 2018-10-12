@@ -13,7 +13,6 @@
 *= require_tree .
 *= require_self
 */
-
 .debug_dump {
   clear: both;
   float: left;

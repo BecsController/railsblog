@@ -1,19 +1,44 @@
 <% buttonClass = "button is-inverted is-link is-medium" %>
 
-<nav class="navbar navBackground">
-  <h1 class="navbar-brand is-size-1 has-text-link">
-    Bec's Ruby and Rails Blog
-  </h1>
-  <ul class="navbar-end">
-      <li class="linkClass <%= buttonClass %>"><%= link_to 'Home', "/" %></li>
-      <% if logged_in? %>
-        <p>You are logged in as <%= current_user.name %></p>
-        <li class="linkClass <%= buttonClass %>"><%= link_to "Profile", current_user %></li>
-        <li class="linkClass <%= buttonClass %>"><%= link_to "Settings", '#' %></li>
-        <li class="linkClass <%= buttonClass %>"><%= link_to 'Logout', logout_path, method: "delete" %></li>
+<nav class="navbar navBackground" style="margin-bottom: 2vw">
+  <div class="columns">
+    <div>
+      <p class="is-size-5">You are logged in as <%= current_user.name %></p>
+    </div>
+    <div class="columns">
+
+      <h1 class="navbar-brand is-size-1 has-text-link column is-8" style="padding: 1vw">
+        Bec's Ruby and Rails Blog
+      </h1>
+
+      <div class="column">
+
+        <ul class="navbar-end" style="margin-left: 4vw">
+          <li class="linkClass <%= buttonClass %>"><%= link_to 'Home', "/" %></li>
+          <% if logged_in? %>
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger">
+              <div class="linkClass <%= buttonClass %>" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span>Users</span>
+              </div>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content">
+                <li class="linkClass dropdown-item <%= buttonClass %>"><%= link_to "Profile", current_user %></li>
+                <li class="linkClass dropdown-item <%= buttonClass %>"><%= link_to "Settings", '#' %></li>
+              </div>
+            </div>
+          </div>
+
+          <li class="linkClass <%= buttonClass %>"><%= link_to 'Logout', logout_path, method: "delete" %></li>
+        </ul>
+      </div>
       <% else %>
-        <li class="linkClass <%= buttonClass %>"><%= link_to 'Login', login_path %></li>
-        <li class="linkClass <%= buttonClass %>"><%= link_to 'Signup', signup_path %></li>
-      <% end %>
-  </ul>
+      <li class="linkClass <%= buttonClass %>"><%= link_to 'Login', login_path %></li>
+      <li class="linkClass <%= buttonClass %>"><%= link_to 'Signup', signup_path %></li>
+    </ul>
+  </div>
+  <% end %>
+</div>
+</div>
 </nav>
