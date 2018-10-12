@@ -3,7 +3,7 @@
 <nav class="navbar navBackground" style="margin-bottom: 2vw">
   <div class="columns">
     <div>
-      <p class="is-size-5">You are logged in as <%= current_user.name %></p>
+      <% if logged_in? %><p class="is-size-5">You are logged in as <%= current_user.name %></p><% end %>
     </div>
     <div class="columns">
 
